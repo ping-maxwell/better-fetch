@@ -7,5 +7,6 @@ export class BetterFetchError extends Error {
 		super(statusText || status.toString(), {
 			cause: error,
 		});
+		Error.captureStackTrace(this, this.constructor);
 	}
 }
